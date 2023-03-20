@@ -82,7 +82,7 @@ void QueuePop(Queue* pq)
 }
 
 //队列大小
-void QueueSize(Queue* pq)
+int QueueSize(Queue* pq)
 {
 	assert(pq);
 

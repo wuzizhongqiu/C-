@@ -36,7 +36,7 @@ void QueuePush(Queue* pq, QDataType x);
 void QueuePop(Queue* pq);
 
 //队列大小
-void QueueSize(Queue* pq);
+int QueueSize(Queue* pq);
 
 //判空
 bool QueueEmpty(Queue* pq);
