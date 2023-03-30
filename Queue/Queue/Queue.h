@@ -47,3 +47,4 @@ QDataType QueueFront(Queue* pq);
 //∂”Œ≤
 QDataType QueueBack(Queue* pq);
 
+
