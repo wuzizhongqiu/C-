@@ -3,7 +3,6 @@
 #include "BinaryTree.h"
 #include "Queue.h" 
 
-
 //创建二叉树节点
 BTNode* BuyNode(BTDataType x)
 {
@@ -31,7 +30,6 @@ BTNode* CreatTree()
 	BTNode* node5 = BuyNode(5);
 	BTNode* node6 = BuyNode(6);
 	BTNode* node7 = BuyNode(7);
-
 
 	node1->left = node2;
 	node1->right = node4;
@@ -138,7 +136,6 @@ void LevelOrder(BTNode* root)
 		if (front->left) QueuePush(&q, front->left);
 		if (front->right) QueuePush(&q, front->right);
 	}
-
 
 	QueueDestroy(&q);
 }

@@ -3,12 +3,11 @@
 #include "BinaryTree.h"
 #include "Queue.h" 
 
-
+//≤‚ ‘
 void test()
 {
 	BTNode* root = CreatTree();
 	
-	LevelOrder(root);
 }
 
 int main()
