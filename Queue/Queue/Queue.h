@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-typedef struct BinaryTreeNode* QDataType;
+typedef int QDataType;
 
 typedef struct QueueNode
 {
