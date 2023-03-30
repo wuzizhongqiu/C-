@@ -1,19 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include "BinaryTree.h"
+#include "Queue.h" 
+
 
 void test()
 {
 	BTNode* root = CreatTree();
-
-	PreOrder(root);
-	printf("\n");
-
-	InOrder(root);
-	printf("\n");
-
-	PostOrder(root);
-	printf("\n");
+	
+	LevelOrder(root);
 }
 
 int main()
@@ -21,3 +16,4 @@ int main()
 	test();
 	return 0;
 }
+

@@ -30,4 +30,17 @@ void InOrder(BTNode* root);
 //二叉树后序遍历
 void PostOrder(BTNode* root);
 
+//二叉树大小
+int TreeSize(BTNode* root);
 
+//二叉树高度
+int TreeHeight(BTNode* root);
+
+//二叉树k层大小
+int TreeKLevel(BTNode* root, int k);
+
+//查找值为x的节点
+BTNode* TreeFind(BTNode* root, BTDataType x);
+
+//二叉树的层序遍历
+void LevelOrder(BTNode* root);

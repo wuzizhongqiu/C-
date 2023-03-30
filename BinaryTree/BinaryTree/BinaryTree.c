@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include "BinaryTree.h"
+#include "Queue.h" 
+
 
 //创建二叉树节点
 BTNode* BuyNode(BTDataType x)
@@ -71,3 +73,72 @@ void PostOrder(BTNode* root)
 	printf("%d ", root->data);
 }
 
+//二叉树大小
+int TreeSize(BTNode* root)
+{
+	return root == NULL ? 0 : TreeSize(root->left) + TreeSize(root->right) + 1;
+}
+
+//二叉树高度
+int TreeHeight(BTNode* root)
+{
+	if (root == NULL)
+		return 0;
+
+	int l = TreeHeight(root->left);
+	int r = TreeHeight(root->right);
+
+	return l > r ? l + 1 : r + 1;
+}
+
+//二叉树k层大小
+int TreeKLevel(BTNode* root, int k)
+{
+	assert(k > 0);
+
+	if (root == NULL)
+		return 0;
+
+	if (k == 1)
+		return 1;
+
+	return TreeKLevel(root->left, k - 1) + TreeKLevel(root->right, k - 1);
+}
+
+//查找值为x的节点
+BTNode* TreeFind(BTNode* root, BTDataType x)
+{
+	if (root == NULL)
+		return NULL;
+	
+	if (root->data == x)
+		return root;
+
+	BTNode* l = TreeFind(root->left, x);
+	if (l) return l;
+	BTNode* r = TreeFind(root->right, x);
+	if (r) return r;
+
+	return NULL;
+}
+
+//二叉树的层序遍历
+void LevelOrder(BTNode* root)
+{
+	Queue q;
+	QueueInit(&q);
+	if (root) QueuePush(&q, root);
+
+	while (!QueueEmpty(&q))
+	{
+		BTNode* front = QueueFront(&q);
+		QueuePop(&q);
+		printf("%d ", front->data);
+
+		if (front->left) QueuePush(&q, front->left);
+		if (front->right) QueuePush(&q, front->right);
+	}
+
+
+	QueueDestroy(&q);
+}
